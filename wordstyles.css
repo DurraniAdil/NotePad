@@ -1,11 +1,9 @@
-/* General Reset */
 html, body {
   margin: 0;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
 }
 
-/* Main Container */
 .container {
   width: 90%;
   margin: 50px auto;
@@ -15,7 +13,6 @@ html, body {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Header */
 .header {
   display: flex;
   justify-content: space-between;
@@ -45,7 +42,6 @@ h2 {
   transform: translateX(-50%);
 }
 
-/* Editable Title Placeholder */
 #editableTitle:empty:before {
   content: "Enter title here...";
   color: gray;
@@ -55,8 +51,7 @@ h2 {
 #editableTitle:focus:before {
   content: "";
 }
-
-/* Controls */
+ 
 .controls {
   display: flex;
   gap: 15px;
@@ -73,7 +68,6 @@ h2 {
   color: #007bff;
 }
 
-/* Text Area */
 #inputText {
   width: 97%;
   height: 200px;
@@ -86,7 +80,6 @@ h2 {
   background-color: #84c0d199;
 }
 
-/* Output Container */
 .output-container {
   display: flex;
   justify-content: space-around;
@@ -110,7 +103,6 @@ h2 {
   color: #333;
 }
 
-/* Night Mode */
 .night-mode {
   background-color: #000;
   color: #fff;
