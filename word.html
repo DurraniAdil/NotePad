@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NotePad</title>
+  <link rel="stylesheet" href="wordstyles.css">
+  <link rel="icon" type="image/png" href="note.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="title-container">
+        <h1 contenteditable="true" id="editableTitle"> </h1>
+        <h2 contenteditable="true">-durrani.hw</h2>
+      </div>
+      <div class="controls">
+        <span id="deleteAll" class="icon"><i class="fas fa-trash"></i></span>
+        <span id="saveNotes" class="icon"><i class="fas fa-save"></i></span>
+        <span id="copyClipboard" class="icon"><i class="fas fa-copy"></i></span>
+        <span id="toggleTheme" class="icon"><i class="fas fa-adjust"></i></span>
+      </div>
+    </div>
+    <textarea id="inputText" placeholder="Enter your text here...."></textarea>
+    <div class="output-container">
+      <div class="output">
+        <p class="words">Words</p>
+        <span data-word-count>0</span>
+      </div>
+      <div class="output">
+        <p class="characters">Characters</p>
+        <span data-character-count>0</span>
+      </div>
+      <div class="output">
+        <p class="sentences">Sentences</p>
+        <span data-sentence-count>0</span>
+      </div>
+      <div class="output">
+        <p class="paragraphs">Paragraphs</p>
+        <span data-paragraph-count>0</span>
+      </div>
+    </div>
+  </div>
+  <script src="wordscript.js"></script>
+</body>
+</html>

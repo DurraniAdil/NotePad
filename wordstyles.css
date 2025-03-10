@@ -1,0 +1,117 @@
+/* General Reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* Main Container */
+.container {
+  width: 90%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #709898;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.title-container {
+  flex-grow: 1;
+  text-align: center;
+  position: relative;
+}
+
+h1 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Editable Title Placeholder */
+#editableTitle:empty:before {
+  content: "Enter title here...";
+  color: gray;
+  font-style: italic;
+}
+
+#editableTitle:focus:before {
+  content: "";
+}
+
+/* Controls */
+.controls {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.icon:hover {
+  color: #007bff;
+}
+
+/* Text Area */
+#inputText {
+  width: 97%;
+  height: 200px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #84c0d1;
+  border-radius: 15px;
+  resize: vertical;
+  outline: none;
+  background-color: #84c0d199;
+}
+
+/* Output Container */
+.output-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.output {
+  text-align: center;
+}
+
+.output p {
+  font-size: 1rem;
+  color: #222;
+}
+
+.output span {
+  display: block;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Night Mode */
+.night-mode {
+  background-color: #000;
+  color: #fff;
+}
