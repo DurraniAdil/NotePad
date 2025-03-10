@@ -9,46 +9,44 @@ const copyClipboardButton = document.getElementById("copyClipboard");
 const toggleThemeButton = document.getElementById("toggleTheme");
 const editableTitle = document.getElementById("editableTitle");
 
-// Update analysis when input changes
+// This updates analysis when input changes(basically performs a word count)
 input.addEventListener("input", updateAnalysis);
 
-// Button event listeners
+// Button event listeners(all the different features are listed here)
 deleteAllButton.addEventListener("click", deleteAll);
 saveNotesButton.addEventListener("click", saveNotes);
 copyClipboardButton.addEventListener("click", copyToClipboard);
 toggleThemeButton.addEventListener("click", toggleTheme);
 
-// Load saved notes and title from local storage
 window.addEventListener("DOMContentLoaded", loadSavedData);
 
-// Update editable title changes
 editableTitle.addEventListener("input", saveTitle);
 
 function updateAnalysis() {
   const text = input.value.trim();
 
-  // Count Words
+  // performs a word count
   const wordsArray = text.split(/\s+/).filter(word => word !== "");
   wordCount.innerText = wordsArray.length;
 
-  // Count Characters
+  // counts the characters 
   characterCount.innerText = text.length;
 
-  // Count Sentences
+  // count the sentences
   const sentencesArray = text.split(/[.!?]+/).filter(sentence => sentence !== "");
   sentenceCount.innerText = sentencesArray.length;
 
-  // Count Paragraphs
+  // the paragraphs
   const paragraphsArray = text.split("\n").filter(paragraph => paragraph.trim() !== "");
   paragraphCount.innerText = paragraphsArray.length;
 }
 
 function deleteAll() {
-  input.value = ""; // Clear the text area
-  editableTitle.textContent = ""; // Clear the editable title
-  localStorage.removeItem("savedNotes"); // Remove saved notes
-  localStorage.removeItem("savedTitle"); // Remove saved title
-  updateAnalysis(); // Update analysis after clearing
+  input.value = ""; 
+  editableTitle.textContent = ""; 
+  localStorage.removeItem("savedNotes"); 
+  localStorage.removeItem("savedTitle"); 
+  updateAnalysis(); 
 }
 
 function saveNotes() {
@@ -58,13 +56,13 @@ function saveNotes() {
 }
 
 function copyToClipboard() {
-  input.select(); // Select the text area content
-  document.execCommand("copy"); // Copy the selected text to clipboard
+  input.select(); 
+  document.execCommand("copy"); 
   alert("Text copied to clipboard!");
 }
 
 function toggleTheme() {
-  document.body.classList.toggle("night-mode"); // Toggle night mode class
+  document.body.classList.toggle("night-mode"); 
 }
 
 function loadSavedData() {
@@ -73,7 +71,7 @@ function loadSavedData() {
 
   if (savedNotes) {
     input.value = savedNotes;
-    updateAnalysis(); // Update analysis after loading saved notes
+    updateAnalysis(); 
   }
 
   if (savedTitle) {
